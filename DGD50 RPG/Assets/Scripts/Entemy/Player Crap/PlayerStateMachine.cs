@@ -10,7 +10,6 @@ public class PlayerStateMachine : MonoBehaviour
     private GameManager GM;
     public Player player;
     public States currentState;
-    private bool alive = true;
 
     //progress bar
     private float currentCool = 0.0f;
@@ -71,34 +70,23 @@ public class PlayerStateMachine : MonoBehaviour
                 break;
 
             case States.DEAD:
-                if (alive)
-                {
-                    return;
-                }
-                else
-                {
-                    this.gameObject.tag = "DeadPlayer";
-                    GM.PlayersToManage.Remove(this.gameObject);
-                    GM.PlayerCharacters.Remove(this.gameObject);
-                    selector.SetActive(false);
+                this.gameObject.tag = "DeadPlayer";
+                GM.PlayersToManage.Remove(this.gameObject);
+                GM.PlayerCharacters.Remove(this.gameObject);
+                selector.SetActive(false);
 
-                    GM.selectEnemyPanel.SetActive(false);
+                GM.selectEnemyPanel.SetActive(false);
 
-                    for (int i = 0; i < GM.turns.Count; i++)
+                for (int i = 0; i < GM.turns.Count; i++)
+                {
+                    if (GM.turns[i].attacked == this.gameObject)
                     {
-                        if (GM.turns[i].attacked == this.gameObject)
-                        {
                             GM.turns.Remove(GM.turns[i]);
-                        }
                     }
-
-                    //TODO: figure out why coloring changing not working
-                    this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(105, 105, 105, 255);
-
-                    GM.playerInputs = GameManager.PlayerInputs.ACTIVATE;
-                    alive = false;
                 }
 
+                this.gameObject.SetActive(false);
+                GM.playerInputs = GameManager.PlayerInputs.ACTIVATE;
                 break;
         }
     }
@@ -132,7 +120,7 @@ public class PlayerStateMachine : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
 
         DoDamage();
 

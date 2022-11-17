@@ -58,6 +58,18 @@ public class EnemyStateMachine : MonoBehaviour
                 break;
 
             case States.DEAD:
+                this.gameObject.tag = "DeadEnemy";
+                GM.Enemies.Remove(this.gameObject);
+                //GM.PlayerCharacters.Remove(this.gameObject);
+
+                for (int i = 0; i < GM.turns.Count; i++)
+                {
+                    if (GM.turns[i].attacked == this.gameObject)
+                    {
+                        GM.turns.Remove(GM.turns[i]);
+                    }
+                }
+                this.gameObject.SetActive(false);
                 break;
         }
     }
@@ -106,7 +118,7 @@ public class EnemyStateMachine : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
         DoDamage();
 
         Vector3 frstPos = startPos;

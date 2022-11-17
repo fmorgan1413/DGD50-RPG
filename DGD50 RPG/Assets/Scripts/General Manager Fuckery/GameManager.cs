@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyButton;
     public Transform Spacer;
 
-    //TODO: implement specials panel beeetch
+    //panels crap
     public GameObject actionsPanel;
     public GameObject selectEnemyPanel;
     public GameObject specialsPanel;
