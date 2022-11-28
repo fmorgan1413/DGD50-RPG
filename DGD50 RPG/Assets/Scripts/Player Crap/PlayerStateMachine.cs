@@ -25,7 +25,7 @@ public class PlayerStateMachine : MonoBehaviour
     //IENumertor crap
     public GameObject enemyToAttack;
     private bool actionStarted = false;
-    private Vector3 startPos;
+    public Vector3 startPos;
     private float animSpeed = 5.0f;
 
     public TextMeshProUGUI HPText;
@@ -38,7 +38,7 @@ public class PlayerStateMachine : MonoBehaviour
         currentState = States.PROCESSING;
         // maxCool = player.agility / 5.0f;
         selector.SetActive(false);
-        startPos = transform.position;
+        //startPos = transform.position;
 
         HPText.text = "HP: " + player.currentHealth + "/" + player.health;
         APText.text = "AP: " + player.currentAP + "/" + player.actionPoints;
@@ -100,6 +100,13 @@ public class PlayerStateMachine : MonoBehaviour
 
         if (currentCool >= maxCool)
         {
+            player.currentAP += (player.agility * .5f);
+            APText.text = "AP: " + player.currentAP + "/" + player.actionPoints;
+
+            if (player.currentAP >= player.actionPoints)
+            {
+                player.currentAP = player.actionPoints;
+            }
             currentState = States.ADD;
         }
     }

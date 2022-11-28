@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     // or find a different solution to that problem (change player character?)
 
     // TODO: connect magic attacks to AP
-    // (make sure cant do those attacks with no AP and take AP away when using)
-    // (should also figure out how generating AP)
+    // (make sure cant do those attacks with no AP and take AP away)
 
     public DoActions actionStates;
 
@@ -151,6 +150,7 @@ public class GameManager : MonoBehaviour
 
         playerChoice.chosenAttack = PlayersToManage[0].GetComponent<PlayerStateMachine>().player.attackHandlers[1];
 
+        PlayersToManage[0].GetComponent<PlayerStateMachine>().player.currentAP -= PlayersToManage[0].GetComponent<PlayerStateMachine>().player.attackHandlers[1].attackAP;
         selectEnemyPanel.SetActive(true);
     }
 

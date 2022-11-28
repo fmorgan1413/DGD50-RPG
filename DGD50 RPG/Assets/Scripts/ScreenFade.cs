@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ScreenFade : MonoBehaviour
 {
-    // TODO: transition characters on screen
     public GameObject fadingSquare;
 
     public GameObject player1;
@@ -64,6 +63,7 @@ public class ScreenFade : MonoBehaviour
             yield return null;
         }
 
+        fadingSquare.SetActive(false);
         player1.transform.position = targetPos1;
         player2.transform.position = targetPos2;
     }
