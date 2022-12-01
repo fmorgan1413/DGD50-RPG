@@ -11,8 +11,8 @@ public class ScreenFade : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
 
-    private Vector3 target1 = new Vector3(2.63f, 1.95f, 0.0f);
-    private Vector3 target2 = new Vector3(3.35f, -1.18f, 0.0f);
+    private Vector3 target1 = new Vector3(2.63f, -0.39f, 0.0f);
+    private Vector3 target2 = new Vector3(3.35f, -2.64f, 0.0f);
 
     private float time = 1.0f;
     // Start is called before the first frame update

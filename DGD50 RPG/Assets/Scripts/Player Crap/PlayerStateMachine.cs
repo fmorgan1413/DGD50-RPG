@@ -107,6 +107,8 @@ public class PlayerStateMachine : MonoBehaviour
             {
                 player.currentAP = player.actionPoints;
             }
+
+            selector.SetActive(true);
             currentState = States.ADD;
         }
     }
