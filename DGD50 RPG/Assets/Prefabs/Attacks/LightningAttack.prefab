@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2035071645727386866}
   - component: {fileID: 4145234325715602335}
   m_Layer: 0
-  m_Name: MagicAttack
+  m_Name: LightningAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e095cc59e8f49ab488ea5b9170eb3df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: Magic
+  attackName: Lightning
   attackDamage: 10
   attackAP: 5

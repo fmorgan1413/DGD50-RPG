@@ -21,6 +21,7 @@ public class PlayerStateMachine : MonoBehaviour
     }
     public Image progressBar;
     public GameObject selector;
+    public Image playerPanel;
 
     //IENumertor crap
     public GameObject enemyToAttack;
@@ -73,6 +74,7 @@ public class PlayerStateMachine : MonoBehaviour
                 this.gameObject.tag = "DeadPlayer";
                 GM.PlayersToManage.Remove(this.gameObject);
                 GM.PlayerCharacters.Remove(this.gameObject);
+                playerPanel.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255,100);
                 selector.SetActive(false);
 
                 GM.selectEnemyPanel.SetActive(false);
@@ -89,6 +91,7 @@ public class PlayerStateMachine : MonoBehaviour
                 GM.playerInputs = GameManager.PlayerInputs.ACTIVATE;
                 break;
         }
+        APText.text = "AP: " + player.currentAP + "/" + player.actionPoints;
     }
 
     void ProgressBar()
@@ -109,6 +112,7 @@ public class PlayerStateMachine : MonoBehaviour
             }
 
             selector.SetActive(true);
+            playerPanel.gameObject.GetComponent<Image>().color = new Color32(253, 151, 0,100);
             currentState = States.ADD;
         }
     }

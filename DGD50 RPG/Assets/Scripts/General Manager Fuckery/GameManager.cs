@@ -6,9 +6,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    // TODO: Fix selector activator to let player know which player has the turn
-    // or find a different solution to that problem (change player character?)
-
     // TODO: connect magic attacks to AP
     // (make sure cant do those attacks with no AP and take AP away)
 
@@ -24,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject enemyButton;
     public Transform Spacer;
+
+    public GameObject specialButton;
 
     //panels crap
     public GameObject actionsPanel;
@@ -78,6 +77,7 @@ public class GameManager : MonoBehaviour
             case DoActions.PERFORM:
                 break;
         }
+        specialButton.transform.Find("Text (TMP)").gameObject.GetComponent<TextMeshProUGUI>().text = PlayersToManage[0].GetComponent<PlayerStateMachine>().player.playerType.ToString();
 
         switch (playerInputs)
         {
@@ -176,6 +176,7 @@ public class GameManager : MonoBehaviour
         selectEnemyPanel.SetActive(false);
         specialsPanel.SetActive(false);
         PlayersToManage[0].transform.Find("Selector").gameObject.SetActive(false);
+        PlayersToManage[0].GetComponent<PlayerStateMachine>().playerPanel.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255,100);
 
         PlayersToManage.RemoveAt(0);
         playerInputs = PlayerInputs.WAIT;

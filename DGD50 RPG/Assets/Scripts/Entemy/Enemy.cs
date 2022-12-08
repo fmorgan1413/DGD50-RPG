@@ -18,7 +18,7 @@ public class Enemy
     //*********************special enemy crap***************************
 
     //*******************enum go here if you need different enemy types********************
-    //public Type enemyType
+    //public Type enemyType;
 
     public float baseDEF;
     public float currentDEF;

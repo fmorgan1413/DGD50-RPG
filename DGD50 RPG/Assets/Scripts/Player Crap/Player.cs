@@ -15,6 +15,14 @@ public class Player
 
     //*********extra stats and stuff can go here****************
     public float agility;
+    public Type playerType;
 
     public List<AttackHandler> attackHandlers = new List<AttackHandler>();
+
+    public enum Type
+    {
+        FIRE,
+        LIGHTNING,
+        ICE
+    }
 }

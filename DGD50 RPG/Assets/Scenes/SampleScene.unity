@@ -890,7 +890,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: dfc9514e891279f4f914d1b6b6e251c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cc531118fc83b24e9fca93e76fdb861, type: 3}
   m_Color: {r: 0.9254902, g: 0.85882354, b: 0.85882354, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -910,7 +910,7 @@ Transform:
   m_GameObject: {fileID: 499387203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.28, y: -0.17, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 605521234}
   m_Father: {fileID: 0}
@@ -999,6 +999,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &539394583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4595192828987793457, guid: 8265177dcc0bcb94f9c40242bceaad5f, type: 3}
+  m_PrefabInstance: {fileID: 1956784468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &605521232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1016,19 +1027,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.73742115
+      value: 0.444075
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.4025254
+      value: 0.74249697
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.21
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.804
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1191,11 +1202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.285
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6736
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1348,12 +1359,14 @@ MonoBehaviour:
     actionPoints: 20
     currentAP: 0
     agility: 20
+    playerType: 0
     attackHandlers:
     - {fileID: 5804408929991715708, guid: 196d707ae9e9a4044934d4058f20a4a7, type: 3}
-    - {fileID: 4145234325715602335, guid: e8418366d96d53449b642b0f07a2c936, type: 3}
+    - {fileID: 6627751443734290784, guid: 115e89a9ba71f8342b72940f389e4cfd, type: 3}
   currentState: 0
   progressBar: {fileID: 1956784472}
   selector: {fileID: 1107513091}
+  playerPanel: {fileID: 539394583}
   enemyToAttack: {fileID: 0}
   startPos: {x: 2.63, y: -0.39, z: 0}
   HPText: {fileID: 1956784471}
@@ -1829,11 +1842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.31160757
+      value: 0.6160793
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.62550527
+      value: 1.234435
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2461,12 +2474,14 @@ MonoBehaviour:
     actionPoints: 5
     currentAP: 0
     agility: 10
+    playerType: 1
     attackHandlers:
     - {fileID: 5804408929991715708, guid: 196d707ae9e9a4044934d4058f20a4a7, type: 3}
     - {fileID: 4145234325715602335, guid: e8418366d96d53449b642b0f07a2c936, type: 3}
   currentState: 0
   progressBar: {fileID: 1596122158}
   selector: {fileID: 1504280019}
+  playerPanel: {fileID: 2007552823}
   enemyToAttack: {fileID: 0}
   startPos: {x: 3.35, y: -2.64, z: 0}
   HPText: {fileID: 626825022}
@@ -3145,6 +3160,7 @@ MonoBehaviour:
   PlayersToManage: []
   enemyButton: {fileID: 2574340159212228429, guid: c7eb3e2a6fd44d6489d822d75333bb79, type: 3}
   Spacer: {fileID: 1256168020}
+  specialButton: {fileID: 1454607045}
   actionsPanel: {fileID: 1787675067}
   selectEnemyPanel: {fileID: 12878466}
   specialsPanel: {fileID: 1206418782}
@@ -3165,19 +3181,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.31160757
+      value: 0.61607933
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.62550527
+      value: 1.2344346
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0461
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6998
+      value: 1.852
       objectReference: {fileID: 0}
     - target: {fileID: 4370469045255972136, guid: 480ad61f2fc283d4ab64de15f47073f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3470,6 +3486,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4595192828987793457, guid: 8265177dcc0bcb94f9c40242bceaad5f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595192828987793457, guid: 8265177dcc0bcb94f9c40242bceaad5f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595192828987793457, guid: 8265177dcc0bcb94f9c40242bceaad5f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4595192828987793459, guid: 8265177dcc0bcb94f9c40242bceaad5f, type: 3}
       propertyPath: m_Name
       value: Player Bar 1
@@ -3553,6 +3581,17 @@ MonoBehaviour:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4595192830735986699, guid: 8265177dcc0bcb94f9c40242bceaad5f, type: 3}
   m_PrefabInstance: {fileID: 1956784468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2007552823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4595192828987793457, guid: 8265177dcc0bcb94f9c40242bceaad5f, type: 3}
+  m_PrefabInstance: {fileID: 1085283666}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
