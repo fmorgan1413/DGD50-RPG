@@ -32,6 +32,8 @@ public class PlayerStateMachine : MonoBehaviour
     public TextMeshProUGUI HPText;
     public TextMeshProUGUI APText;
 
+    private ParticleSystem Particles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,8 @@ public class PlayerStateMachine : MonoBehaviour
         // maxCool = player.agility / 5.0f;
         selector.SetActive(false);
         //startPos = transform.position;
+
+        Particles = GetComponent<ParticleSystem>();
 
         HPText.text = "HP: " + player.currentHealth + "/" + player.health;
         APText.text = "AP: " + player.currentAP + "/" + player.actionPoints;
@@ -131,6 +135,12 @@ public class PlayerStateMachine : MonoBehaviour
         while (MoveTowardEnemy(enemyPos))
         {
             yield return null;
+        }
+
+        if (GM.pickedMagic)
+        {
+            Particles.Emit(20);
+            GM.pickedMagic = false;
         }
 
         yield return new WaitForSeconds(0.1f);

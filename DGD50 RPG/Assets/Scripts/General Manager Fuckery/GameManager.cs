@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public Transform Spacer;
 
     public GameObject specialButton;
+    public bool pickedMagic;
 
     //panels crap
     public GameObject actionsPanel;
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
         playerInputs = PlayerInputs.ACTIVATE;
         selectEnemyPanel.SetActive(false);
 
+        pickedMagic = false;
         EnemyButtons();
     }
 
@@ -151,6 +153,7 @@ public class GameManager : MonoBehaviour
         playerChoice.chosenAttack = PlayersToManage[0].GetComponent<PlayerStateMachine>().player.attackHandlers[1];
 
         PlayersToManage[0].GetComponent<PlayerStateMachine>().player.currentAP -= PlayersToManage[0].GetComponent<PlayerStateMachine>().player.attackHandlers[1].attackAP;
+        pickedMagic = true;
         selectEnemyPanel.SetActive(true);
     }
 
